@@ -1,128 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-	<head>
-		<title>Lịch Biểu</title>
-		<meta charset="utf-8"/>
-		<script type="text/javascript">
-		function time() 
-		{
-		   var today = new Date();
-		   var weekday=new Array(7);
-		   weekday[0]="Sunday";
-		   weekday[1]="Monday";
-		   weekday[2]="Tuesday";
-		   weekday[3]="Wednesday";
-		   weekday[4]="Thursday";
-		   weekday[5]="Friday";
-		   weekday[6]="Saturday";
-		   var day = weekday[today.getDay()];
-		   var dd = today.getDate();
-		   var mm = today.getMonth()+1; //January is 0!
-		   var yyyy = today.getFullYear();
-		   var h=today.getHours();
-		   var m=today.getMinutes();
-		   var s=today.getSeconds();
-		   m=checkTime(m);
-		   s=checkTime(s);
-		   nowTime = h+":"+m+":"+s;
-		   if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = day+', '+ dd+'/'+mm+'/'+yyyy;
+<head>
+	<title>JAM Blog</title>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
 
-		   tmp='<span class="date">'+today+' | '+nowTime+'</span>';
+	<header class="trasparent_nav">
+		<div class="wrapper">
+			<div class="logo">
+				<a href="#"><img src="img/logo.png" alt="Fertile"></a>
+			</div>
 
-		   document.getElementById("clock").innerHTML=tmp;
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="LichBieu.html">Lịch biểu</a></li>
+					<li><a href="#">Donate</a></li>
+					<li><a href="#">Liên hệ</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header><!-- End trasparent_nav -->
 
-		   clocktime=setTimeout("time()","1000","JavaScript");
-		   function checkTime(i)
-		   {
-		      if(i<10){
-		     i="0" + i;
-		      }
-		      return i;
-		   }
-		}
-		</script>
-	</head>
-	<body style="background:url('images/background.jpg') no-repeat center top; background-size: 1400px 1100px;" onload="time()">
-		<center>
-			<b><div id="clock"></div></b>
-			<table border="2" style="width: 600px">
-				<caption><b>Lịch Biểu</b></caption>
-				<thead><tr>
-					<th colspan="2"><center>Thời gian</center></th>
-					<th style="width: 400px"><center>Môn học</center></th>
-				</tr></thead>
-				<tbody><tr>
-					<td rowspan="2"><center>Thứ 2</center></td>
-					<td style="width: 100px"><center>Sáng</center></td>
-					<td>&emsp;&emsp;Anh, Địa, GD, Lý</td>
-				</tr>
-				<tr>
-					<td><center>Chiều</center></td>
-					<td>&emsp;&emsp;Sinh, Toán</td>
-				</tr>
-				<tr>
-					<td rowspan="2"><center>Thứ 3</center></td>
-					<td><center>Sáng</center></td>
-					<td>&emsp;&emsp;CN, Anh, Văn, Hóa, Toán</td>
-				</tr>
-				<tr>
-					
-					<td><center>Chiều</center></td>
-					<td>&emsp;&emsp;Toán, Lý</td>
-				</tr>
-				<tr>
-					<td rowspan="2"><center>Thứ 4</center></td>
-					<td><center>Sáng</center></td>
-					<td>&emsp;&emsp;Văn, Văn, Toán, Sinh, Sử</td>
-				</tr>
-				<tr>
-					
-					<td><center>Chiều</center></td>
-					<td>&emsp;&emsp;Lý, Văn</td>
-				</tr>
-				<tr>
-					<td rowspan="2"><center>Thứ 5</center></td>
-					<td><center>Sáng</center></td>
-					<td>&emsp;&emsp;Anh, Lý, TD, Tin, Văn</td>
-				</tr>
-				<tr>
-					
-					<td><center>Chiều</center></td>
-					<td>&emsp;&emsp;Toán, Hóa</td>
-				</tr>
-				<tr>
-					<td rowspan="2"><center>Thứ 6</center></td>
-					<td><center>Sáng</center></td>
-					<td>&emsp;&emsp;Hóa, TD, Toán, Toán</td>
-				</tr>
-				<tr>
-					
-					<td><center>Chiều</center></td>
-					<td>&emsp;&emsp;Lý, Toán</td>
-				</tr>
-				<tr>
-					<td rowspan="2"><center>Thứ 7</center></td>
-					<td><center>Sáng</center></td>
-					<td>&emsp;&emsp;CN, Hóa, Lý, Anh</td>
-				</tr>
-				<tr>
-					
-					<td><center>Chiều</center></td>
-					<td>&emsp;&emsp;Hóa, Anh</td>
-				</tr>
-				<tr>
-					<td rowspan="2"><center>Chủ Nhật</center></td>
-					<td><center>Sáng</center></td>
-					<td>&emsp;&emsp;Chưa cập nhật</td>
-				</tr>
-				<tr>
-					
-					<td><center>Chiều</center></td>
-					<td>&emsp;&emsp;Nghỉ</td>
-				</tr></tbody>
-			</table>
-			<p><b><em>Áp dụng từ ngày 01/04/2019</em></b></p>
-		</center>
-		<center><p><b>&copy;COPYRIGHT 2019 by JamesPham</b><p></center>
+	<header class="fixed_nav">
+		<div class="wrapper">
+			<div class="logo">
+				<a href="#"><img src="img/logo_small.png" alt="Fertile"></a>
+			</div>
+
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="LichBieu.html">Lịch biểu</a></li>
+					<li><a href="#">Donate</a></li>
+					<li><a href="#">Liên hệ</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header><!-- End fixed_nav -->
+
+	<section class="billboard">
+		<img src="img/billboard.jpg" alt="" title=""/>
+	</section><!-- End billboard -->
+
+	<section class="cta cta_top">
+		<p>Bạn thắc mắc vấn đề gì?</p>
+		<a href="#">Hãy liên hệ với chúng tôi</a>
+	</section><!-- End cta_top -->
+
+	<section class="services wrapper">
+			<h2>We are JAM, we will make awesome stuff.</h2>
+			<div class="separator">
+				<img src="img/separator.png" alt=""/>
+			</div>
+			<ul>
+				<li>
+					<img class="s_icons" src="img/s1.png" alt=""/>
+					<h3>Công cụ</h3>
+					<p><đang phát triển></p>
+				</li>
+
+				<li>
+					<img class="s_icons" src="img/s2.png" alt=""/>
+					<h3>Blog</h3>
+					<p><đang phát triển></p>
+				</li>
+
+				<li>
+					<img class="s_icons" src="img/s3.png" alt=""/>
+					<h3>Thông báo</h3>
+					<p><đang phát triển></p>
+				</li>
+			</ul>
+	</section><!-- End services -->
+
+
+	<section class="recent_work">
+		<div class="work">
+			<a href=""><img src="img/w1.jpg" alt=""></a>
+		</div>
+		<div class="work">
+			<a href=""><img src="img/w2.jpg" alt=""></a>
+		</div>
+		<div class="work">
+			<a href=""><img src="img/w3.jpg" alt=""></a>
+		</div>
+		<div class="work">
+			<a href=""><img src="img/w4.jpg" alt=""></a>
+		</div>
+		<div class="work">
+			<a href=""><img src="img/w5.jpg" alt=""></a>
+		</div>
+	</section><!-- End recent_work -->
+
+
+	<section class="testimonials wrapper">
+		<h3>Thành viên</h3>
+		<ul class="testi_boxs">
+			<li>
+				<img class="avatar" src="img/client1.jpg" alt=""/>
+				<h2>James Phạm <span class="client_job">/ Manager</span></h2>
+				<p>Chúng tôi sẽ cố gắng để tạo ra một môi trường tốt để mọi người có thể trao đổi và học hỏi một cách dễ dàng.</p>
+			</li>
+			<li>
+				<img class="avatar" src="img/client2.jpg" alt=""/>
+				<h2>David Doe <span class="client_job">/ Cảnh giới 1</span></h2>
+				<p>Hello!.</p>
+			</li>
+			<li>
+				<img class="avatar" src="img/client3.jpg" alt=""/>
+				<h2>David Doe <span class="client_job">/ Cảnh giới 1</span></h2>
+				<p>Hi.</p>
+			</li>
+		</ul>
+	</section><!-- End testimonials -->
+
+
+	<section class="clients">
+		<div class="wrapper">
+			<ul>
+				<li><a href=""><img src="img/client_logo.png" alt="" title="Client Logo"/></a></li>
+				<li><a href=""><img src="img/client_logo.png" alt="" title="Client Logo"/></a></li>
+				<li><a href=""><img src="img/client_logo.png" alt="" title="Client Logo"/></a></li>
+				<li><a href=""><img src="img/client_logo.png" alt="" title="Client Logo"/></a></li>
+				<li><a href=""><img src="img/client_logo.png" alt="" title="Client Logo"/></a></li>
+				<li><a href=""><img src="img/client_logo.png" alt="" title="Client Logo"/></a></li>
+			</ul>
+		</div>
+	</section><!-- End clients -->
+
+	<footer>
+		<div class="wrapper">
+			<section class="cta cta_footer">
+				<p>Bạn thắc mắc vấn đề gì?</p>
+				<a href="#">Hãy liên hệ với chúng tôi</a>
+			</section>
+
+			<div class="footer_widget">
+					<div class="f_cols">
+						<h3>Địa chỉ</h3>
+						<p>^_^ Không cho đâu! ^_^<span class="phone"> ^_^ Quen mới nói ^_^</span></p> 	
+						<ul class="sm">
+							<li><a class="fb" href="#"></a></li>
+							<li><a class="twitter" href="#"></a></li>
+							<li><a class="dribbble" href="#"></a></li>
+						</ul>
+					</div>	
+
+					<div class="f_cols">
+						<h3>About</h3>
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Thành viên</a></li>
+							<li><a href="#">Donate</a></li>
+							<li><a href="#">Quản lý</a></li>
+						</ul>	
+					</div>	
+
+					<div class="f_cols">
+						<h3>Hỗ trợ</h3>
+						<ul>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Liên hệ</a></li>
+							<li><a href="#">Chính sách</a></li>
+						</ul>	
+					</div>	
+
+					<div class="f_cols">
+						<h3>JAM</h3>
+						<p>Hướng tới một tương lai phát triển.</p>
+					</div>
+			</div>
+
+			<p class="rights">© 2019 JAM  -  All Rights Reserved</p>	
+
+		</div>
+	</footer><!-- End Footer -->
+
+	        <script src='../ga.js'></script>
 	</body>
 </html>
